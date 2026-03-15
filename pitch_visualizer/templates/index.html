@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Pitch Visualizer</title>
+</head>
+
+<body>
+
+<h1>Pitch Visualizer</h1>
+
+<form method="POST">
+
+<textarea id="story" name="story" rows="6" cols="60"
+placeholder="Paste your story here"></textarea>
+
+<br><br>
+
+<!-- BONUS FEATURE: Style Selection -->
+<label>Select Style:</label>
+<select id="style">
+<option value="digital art">Digital Art</option>
+<option value="photorealistic">Photorealistic</option>
+<option value="anime">Anime</option>
+<option value="watercolor">Watercolor</option>
+</select>
+
+<br><br>
+
+<button type="submit" onclick="addStyle()">Generate Storyboard</button>
+
+</form>
+
+<hr>
+
+{% for image in images %}
+
+<h3>Scene {{loop.index}}</h3>
+
+<p>{{scenes[loop.index0]}}</p>
+
+<img src="{{image}}" width="450" style="border-radius:10px;">
+
+<hr>
+
+{% endfor %}
+
+
+<script>
+function addStyle(){
+    var style = document.getElementById("style").value;
+    var textarea = document.getElementById("story");
+    textarea.value = textarea.value + " in " + style + " style";
+}
+</script>
+
+</body>
+
+</html>

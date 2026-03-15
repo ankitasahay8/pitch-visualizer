@@ -1,0 +1,7 @@
+flask
+nltk
+diffusers
+transformers
+accelerate
+torch
+pillow
